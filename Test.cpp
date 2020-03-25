@@ -160,3 +160,20 @@ TEST_CASE("combain") {
     CHECK(find(text, "yllomynadyun") == string("illumination"));
     CHECK(find(text, "Anaphilaxyz") == string("Anaphylaxis"));
 }
+TEST_CASE("execption") {
+    string text = "lets test combain sentence with a lot of words and complicated words like encyclopedia illumination Anaphylaxis";
+    CHECK_THROWS(find(text, "tesb"));
+    CHECK_THROWS(find(text, "combaim"));
+    CHECK_THROWS(find(text, "aombaim"));
+    CHECK_THROWS(find(text, "tentence"));
+    CHECK_THROWS(find(text, "sentencr"));
+    CHECK_THROWS(find(text, "qords"));
+    CHECK_THROWS(find(text, "compticated"));
+    CHECK_THROWS(find(text, "comwlicated"));
+    CHECK_THROWS(find(text, "encyclopebia"));
+    CHECK_THROWS(find(text, "encyclnpedia"));
+    CHECK_THROWS(find(text, "rllumination"));
+    CHECK_THROWS(find(text, "Anaphylavis"));
+    CHECK_THROWS(find(text, ""));
+
+}
